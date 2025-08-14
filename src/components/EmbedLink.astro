@@ -1,0 +1,35 @@
+---
+import type { CustomLink } from "@/siteConfig";
+import EmbedModel from "@/components/EmbedModel.astro";
+import { YouTube, Tweet, LinkPreview } from "astro-embed";
+interface Props {
+  link: CustomLink;
+}
+
+const {
+  link: { title, isModel },
+} = Astro.props;
+---
+
+<li>
+  <div
+    class="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  >
+    <h5
+      class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    >
+      {title}
+    </h5>
+    {
+      typeof isModel !== "boolean" && isModel.embed === "youtube" ? (
+        <YouTube id={isModel.url} />
+      ) : typeof isModel !== "boolean" && isModel.embed === "tweet" ? (
+        <Tweet id={isModel.url} />
+      ) : typeof isModel !== "boolean" && isModel.embed === "link" ? (
+        <LinkPreview id={isModel.url} />
+      ) : (
+        <span>No URL</span>
+      )
+    }
+  </div>
+</li>

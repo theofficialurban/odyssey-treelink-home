@@ -46,5 +46,8 @@
       rgb(var(--light-mode-background)),
       rgb(var(--dark-mode-background))
     );
+    background-image: url("/Background.png");
+    background-size: cover;
+    background-attachment: fixed;
   }
 }

@@ -1,56 +1,88 @@
 {
-  "name": "Trevor Tyler Lee",
+  "name": "Official Urban",
+  "subName": "Josh",
   "bio": "Free, open source LinkTree alternative built with Astro & Tailwind CSS",
-  "profilePicture": "/profile-picture.jpg",
+  "profilePicture": "./OdysseyGold.png",
   "url": "https://trevortylerlee.com",
+
   "blog": true,
   "iconLinks": [
     {
-      "id": "1728534577184",
-      "icon": "link",
-      "url": "https://boogerbuttcheeks.com"
+      "id": "133728534577186",
+      "icon": "youtube",
+      "url": "https://youtube.com/@MastersMahanPodcast"
+    },
+    {
+      "id": "133728534577186",
+      "icon": "rumble",
+      "url": "https://rumble.com/c/MastersMahan"
     },
     {
       "id": "1728534577185",
       "icon": "email",
-      "url": "mailto:ttl@trevortylerlee.com"
+      "url": "mailto:theofficialurban@protonmail.com"
     },
     {
       "id": "1728534577186",
       "icon": "github",
-      "url": "https://github.com/trevortylerlee"
+      "url": "https://github.com/theofficialurban"
     },
     {
       "id": "1728534577187",
-      "icon": "twitter",
-      "url": "https://twitter.com/boogerbuttcheek"
+      "icon": "x",
+      "url": "https://x.com/officialurbanus"
+    },
+    {
+      "id": "1755145192231",
+      "icon": "cashapp",
+      "url": "https://cash.app/jsorb84"
+    },
+    {
+      "id": "1755145208363",
+      "icon": "facebook",
+      "url": "https://facebook.com/theurbanodyssey"
+    },
+    {
+      "id": "1755145224647",
+      "icon": "substack",
+      "url": "https://theofficialurban.substack.com"
+    },
+    {
+      "id": "175514522433647",
+      "icon": "spotify",
+      "url": "https://podcasters.spotify.com/pod/show/urbanodyssey"
+    },
+    {
+      "id": "54654213158",
+      "icon": "instagram",
+      "url": "https://instagram.com/theofficialurban"
+    },
+    {
+      "id": "234234234",
+      "icon": "threads",
+      "url": "https://instagram.com/theofficialurban"
+    },
+    {
+      "id": "23422423423434234",
+      "icon": "twitch",
+      "url": "https://twitch.tv/theurbanodyssey"
+    },
+    {
+      "id": "89458954664",
+      "icon": "venmo",
+      "url": "https://venmo.com/officialurban"
     }
   ],
   "customLinks": [
     {
       "id": "1728534585738",
       "title": "🍌 donkey kong country on the snes",
-      "url": "https://youtu.be/7hgr-ZuzXng?si=v3dr9mu2cBL_D4ED"
-    },
-    {
-      "id": "1728534585739",
-      "title": " Best macOS apps",
-      "url": "https://macintoshapps.com"
-    },
-    {
-      "id": "1728534585740",
-      "title": "💕 36 Questions To Fall In Love",
-      "url": "https://thirtysixquestions.org"
-    },
-    {
-      "id": "1728534585741",
-      "title": "SuperWeb Themes",
-      "url": "https://superwebthemes.com"
-    },
-    {
-      "id": "1728534585742",
-      "title": "♥ Donate",
-      "url": "https://donate.stripe.com/aEU6ow7VEf7u7sseUU"
+      "className": [
+        "bg-red-900 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 border border-gray-100 min-h-[100px]"
+      ],
+      "url": "https://youtu.be/7hgr-ZuzXng?si=v3dr9mu2cBL_D4ED",
+
+      "isModel": false
     }
   ]
 }

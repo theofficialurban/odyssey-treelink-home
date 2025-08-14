@@ -4,20 +4,64 @@ import { SITE } from "@/siteConfig";
 import Introduction from "@/components/Introduction.astro";
 import IconLink from "@/components/IconLink.astro";
 import CustomLink from "@/components/CustomLink.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Introduction />
-<ul class="flex justify-center gap-4 py-12">
+<ul class="flex flex-wrap justify-center gap-4 py-12">
   {
     SITE.iconLinks.map((link) => {
       return <IconLink url={link.url} icon={link.icon} />;
     })
   }
 </ul>
+<h3 class="pb-5 text-center text-5xl font-extrabold">🔴Live Streams</h3>
+<ul class="grid grid-cols-3 gap-5">
+  <CustomLink
+    className={[
+      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-green-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
+    ]}
+  >
+    <Icon name={"rumble"} class="size-12" color={"green"} />
+    <span
+      class="bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-3xl font-extrabold text-transparent"
+      >Rumble</span
+    >
+    <sub class="font-mono uppercase">/c/MastersMahan</sub>
+  </CustomLink>
+  <CustomLink
+    className={[
+      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-purple-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
+    ]}
+  >
+    <Icon name={"twitch"} class="size-12" color={"purple"} />
+    <span
+      class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-3xl font-extrabold text-transparent"
+      >Twitch</span
+    >
+    <sub class="font-mono uppercase">@theurbanodyssey</sub>
+  </CustomLink>
+  <CustomLink
+    className={[
+      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-red-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
+    ]}
+  >
+    <Icon name={"youtube"} class="size-12" color={"red"} />
+    <span
+      class="bg-gradient-to-r from-red-500 to-red-500 bg-clip-text text-3xl font-extrabold text-transparent"
+      >YouTube</span
+    >
+    <sub class="font-mono uppercase">@MastersMahanPodcast</sub>
+  </CustomLink>
+</ul>
 <ul class="grid gap-y-6 pb-12 pt-4">
   {
     SITE.customLinks.map((link) => {
-      return <CustomLink url={link.url}>{link.title}</CustomLink>;
+      return (
+        <CustomLink url={link.url} className={link.className}>
+          <div set:html={link.customHtml ?? link.title} />
+        </CustomLink>
+      );
     })
   }
 </ul>

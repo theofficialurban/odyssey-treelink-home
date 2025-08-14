@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 import { SITE } from "@/siteConfig";
 
-import profilePicture from "@/assets/profile-picture.jpg";
+import profilePicture from "@/assets/OdysseyGold.png";
 ---
 
 <div class="mt-8 py-4">
@@ -16,7 +16,17 @@ import profilePicture from "@/assets/profile-picture.jpg";
     draggable="false"
     class="mx-auto size-32 rounded-full"
   />
-  <h1 class="mt-4 text-center text-3xl font-semibold">{SITE.name}</h1>
+  <h1 class="mt-4 text-center text-3xl font-extrabold">
+    <span
+      class="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent"
+      >{SITE.name}</span
+    >
+    <span>|</span>
+    <span
+      class="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text font-bold text-transparent"
+      >{SITE.subName}</span
+    >
+  </h1>
   <p
     class="mt-1 text-balance text-center text-sm text-lightModeForegroundMuted dark:text-darkModeForegroundMuted"
   >
