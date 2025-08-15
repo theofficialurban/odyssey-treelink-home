@@ -10,6 +10,6 @@ export default defineConfig({
     "/blog": "/",
   },
   site: "https://urbanodyssey.xyz",
-  base: "odyssey-treelink-home",
+
   integrations: [tailwind(), sitemap(), icon()],
 });
