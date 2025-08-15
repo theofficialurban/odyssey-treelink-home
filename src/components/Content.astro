@@ -1,10 +1,11 @@
 ---
-import { SITE } from "@/siteConfig";
+import { SITE, LiveSocials } from "@/siteConfig";
 
 import Introduction from "@/components/Introduction.astro";
 import IconLink from "@/components/IconLink.astro";
 import CustomLink from "@/components/CustomLink.astro";
 import { Icon } from "astro-icon/components";
+import LiveLink from "./LiveLink.astro";
 ---
 
 <Introduction />
@@ -17,42 +18,16 @@ import { Icon } from "astro-icon/components";
 </ul>
 <h3 class="pb-5 text-center text-5xl font-extrabold">🔴Live Streams</h3>
 <ul class="grid grid-cols-3 gap-5">
-  <CustomLink
-    className={[
-      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-green-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
-    ]}
-  >
-    <Icon name={"rumble"} class="size-12" color={"green"} />
-    <span
-      class="bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-3xl font-extrabold text-transparent"
-      >Rumble</span
-    >
-    <sub class="font-mono uppercase">/c/MastersMahan</sub>
-  </CustomLink>
-  <CustomLink
-    className={[
-      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-purple-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
-    ]}
-  >
-    <Icon name={"twitch"} class="size-12" color={"purple"} />
-    <span
-      class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-3xl font-extrabold text-transparent"
-      >Twitch</span
-    >
-    <sub class="font-mono uppercase">@theurbanodyssey</sub>
-  </CustomLink>
-  <CustomLink
-    className={[
-      "block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 bg-red-900 bg-opacity-20 bg-clip-padding backdrop-blur-lg backdrop-filter transition-all duration-100 ease-linear hover:scale-105",
-    ]}
-  >
-    <Icon name={"youtube"} class="size-12" color={"red"} />
-    <span
-      class="bg-gradient-to-r from-red-500 to-red-500 bg-clip-text text-3xl font-extrabold text-transparent"
-      >YouTube</span
-    >
-    <sub class="font-mono uppercase">@MastersMahanPodcast</sub>
-  </CustomLink>
+  {
+    LiveSocials.map((s) => (
+      <LiveLink
+        url={s.url}
+        title={s.title}
+        subtitle={s.subtitle ?? ""}
+        platform={s.platform}
+      />
+    ))
+  }
 </ul>
 <ul class="grid gap-y-6 pb-12 pt-4">
   {

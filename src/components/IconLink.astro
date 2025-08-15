@@ -6,13 +6,15 @@ const { icon, url } = Astro.props;
 
 <li>
   <a
+    target="_blank"
+    rel="noopener noreferrer"
     href={url}
     aria-label={icon}
-    class="bg-lightModeIconLinkBackground dark:bg-darkModeIconLinkBackground hover:bg-lightModeIconLinkBackgroundHover dark:hover:bg-darkModeIconLinkBackgroundHover hover:ring-lightModeIconLinkOutlineHover dark:hover:ring-darkModeIconLinkOutlineHover group block rounded-full p-3 ring-2 ring-lightModeIconLinkOutline transition-colors dark:ring-darkModeIconLinkOutline"
+    class="group block rounded-full bg-lightModeIconLinkBackground p-3 ring-2 ring-lightModeIconLinkOutline transition-colors hover:bg-lightModeIconLinkBackgroundHover hover:ring-lightModeIconLinkOutlineHover dark:bg-darkModeIconLinkBackground dark:ring-darkModeIconLinkOutline dark:hover:bg-darkModeIconLinkBackgroundHover dark:hover:ring-darkModeIconLinkOutlineHover"
   >
     <Icon
       name={icon}
-      class="text-lightModeIconLinkText group-hover:text-lightModeIconLinkTextHover group-hover:dark:text-darkModeIconLinkTextHover dark:text-darkModeIconLinkText size-6 transition-colors"
+      class="size-6 text-lightModeIconLinkText transition-colors group-hover:text-lightModeIconLinkTextHover dark:text-darkModeIconLinkText group-hover:dark:text-darkModeIconLinkTextHover"
     />
   </a>
 </li>

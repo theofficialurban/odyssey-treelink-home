@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import CustomLink from "./CustomLink.astro";
+import type { LiveClasses, Platform, Platforms } from "../siteConfig";
+import { PLATFORMS, getPlatform } from "../siteConfig";
+interface Props {
+  classes?: LiveClasses;
+  title: string;
+  url: string;
+  subtitle?: string;
+  platform: Platform;
+}
+
+const {
+  classes = { main: "", icon: "size-12", title: "" },
+  title,
+  platform: pform,
+  subtitle,
+  url,
+} = Astro.props;
+//const pform = getPlatform(platform);
+const gFrom = pform.colorScheme.gFrom;
+const gTo = pform.colorScheme.gTo;
+---
+
+<CustomLink
+  {url}
+  className={[
+    pform.colorScheme.blur,
+    `cLink block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 transition-all duration-100 ease-linear hover:scale-105`,
+  ]}
+>
+  <Icon
+    name={pform.iconName}
+    class:list={[classes.icon]}
+    color={pform.colorScheme.icon}
+  />
+  <span class:list={["gTitle text-2xl font-extrabold", classes.title]}
+    >{title}</span
+  >
+  <sub class="font-mono uppercase">{subtitle ?? ""}</sub>
+</CustomLink>
+
+<style define:vars={{ gTo, gFrom }}>
+  .gTitle {
+    @apply bg-gradient-to-r from-[var(--gFrom)] to-[var(--gTo)] bg-clip-text text-transparent;
+  }
+</style>

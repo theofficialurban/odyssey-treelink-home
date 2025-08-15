@@ -76,11 +76,9 @@
   "customLinks": [
     {
       "id": "1728534585738",
-      "title": "🍌 donkey kong country on the snes",
-      "className": [
-        "bg-red-900 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 border border-gray-100 min-h-[100px]"
-      ],
-      "url": "https://youtu.be/7hgr-ZuzXng?si=v3dr9mu2cBL_D4ED",
+      "title": "Urban's Old BioLink",
+
+      "url": "https://bio.link/officialurban",
 
       "isModel": false
     }
