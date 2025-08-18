@@ -1,5 +1,5 @@
 ---
-import { SITE, LiveSocials } from "@/siteConfig";
+import { SITE, LiveSocials, PLATFORMS } from "@/siteConfig";
 
 import Introduction from "@/components/Introduction.astro";
 import IconLink from "@/components/IconLink.astro";
@@ -17,6 +17,20 @@ import LiveLink from "./LiveLink.astro";
   }
 </ul>
 <h3 class="pb-5 text-center text-5xl font-extrabold">🔴Live Streams</h3>
+<ul class="grid gap-y-6 pb-4 pt-4">
+  <CustomLink
+    url={"https://rumble.com/c/MastersMahan/live"}
+    glassColor={""}
+    className={[`min-h-[75px] flex-row items-center justify-center rounded-md`]}
+    listItemClass={"block rounded-md hover:scale-105 transition-all easing-in-out duration-500 bg-[url('https://1a-1791.com/video/z8/d/V/u/x/dVuxa.caa.a-MastersMahan-swz5c3.jpeg')]  bg-cover bg-center"}
+  >
+    <Icon slot="icon" name={"rumble"} class:list={["size-8"]} color={"green"} />
+
+    <span class:list={["gTitle text-2xl font-extrabold"]}>Rumble</span>
+
+    <sub slot="subtitle" class="font-mono uppercase"></sub>
+  </CustomLink>
+</ul>
 <ul class="grid grid-cols-3 gap-5">
   {
     LiveSocials.map((s) => (
@@ -40,3 +54,4 @@ import LiveLink from "./LiveLink.astro";
     })
   }
 </ul>
+<slot name="dynamic"> No Dynamic Links </slot>

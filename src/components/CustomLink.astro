@@ -1,18 +1,18 @@
 ---
 const {
-  text,
-  icon,
   style,
   url,
+  glassColor = "rgb(17 24 39 / 0.2)",
+  listItemClass = "",
   className = [
-    "bg-lightModeCustomLinkBackground border border-gray-100 text-lightModeCustomLinkText ring-2 ring-lightModeCustomLinkOutline transition-colors hover:bg-lightModeCustomLinkBackgroundHover hover:text-lightModeCustomLinkTextHover hover:ring-lightModeCustomLinkOutlineHover dark:bg-darkModeCustomLinkBackground dark:text-darkModeCustomLinkText dark:ring-darkModeCustomLinkOutline dark:hover:bg-darkModeCustomLinkBackgroundHover dark:hover:text-darkModeCustomLinkTextHover dark:hover:ring-darkModeCustomLinkOutlineHover",
+    "bg-lightModeCustomLinkBackground border text-lightModeCustomLinkText ring-2 ring-lightModeCustomLinkOutline transition-colors hover:bg-lightModeCustomLinkBackgroundHover hover:text-lightModeCustomLinkTextHover hover:ring-lightModeCustomLinkOutlineHover dark:bg-darkModeCustomLinkBackground dark:text-darkModeCustomLinkText dark:ring-darkModeCustomLinkOutline dark:hover:bg-darkModeCustomLinkBackgroundHover dark:hover:text-darkModeCustomLinkTextHover dark:hover:ring-darkModeCustomLinkOutlineHover",
   ],
 } = Astro.props;
 
 // "flex items-center justify-center gap-2 rounded-full bg-lightModeCustomLinkBackground px-6 py-3 text-lg text-lightModeCustomLinkText ring-2 ring-lightModeCustomLinkOutline transition-colors hover:bg-lightModeCustomLinkBackgroundHover hover:text-lightModeCustomLinkTextHover hover:ring-lightModeCustomLinkOutlineHover dark:bg-darkModeCustomLinkBackground dark:text-darkModeCustomLinkText dark:ring-darkModeCustomLinkOutline dark:hover:bg-darkModeCustomLinkBackgroundHover dark:hover:text-darkModeCustomLinkTextHover dark:hover:ring-darkModeCustomLinkOutlineHover",
 ---
 
-<li>
+<li class:list={[listItemClass]}>
   <a
     href={url}
     target="_blank"
@@ -20,9 +20,17 @@ const {
     {style}
     class:list={[
       ...className,
-      "flex items-center justify-center gap-2 rounded-full px-6 py-3 text-lg",
+      "flex items-center justify-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-lg",
     ]}
   >
+    <slot name="icon" />
     <slot />
+    <slot name="subtitle" />
   </a>
 </li>
+<style define:vars={{ glassColor }}>
+  a {
+    @apply bg-[var(--glassColor)] bg-opacity-20 bg-clip-padding backdrop-blur-md backdrop-filter;
+    --tw-bg-opacity: 0.2;
+  }
+</style>

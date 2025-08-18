@@ -10,6 +10,12 @@ export default defineConfig({
     "/blog": "/",
   },
   site: "https://urbanodyssey.xyz",
-
+  adapter: vercelAdapter({
+    edgeMiddleware: true,
+    imageService: true,
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [tailwind(), sitemap(), icon()],
 });

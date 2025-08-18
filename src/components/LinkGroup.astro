@@ -1,0 +1,32 @@
+---
+import type { Entry, EntryCollection } from "contentful";
+import type { LinksEntry, LinksGroupEntry } from "@/actions";
+import CustomLink from "./CustomLink.astro";
+interface Props {
+  entry: Entry<LinksGroupEntry, "WITHOUT_UNRESOLVABLE_LINKS">;
+}
+const { entry: e } = Astro.props;
+---
+
+<h3 class="pb-5 text-center text-4xl font-extrabold">
+  {e.fields.title}
+</h3>
+<ul class="grid gap-y-6 pb-12 pt-4">
+  {
+    e.fields.links.length > 0
+      ? e.fields.links.map((l) => {
+          return (
+            <CustomLink
+              className={[
+                "rounded-md border border-gray-700 bg-opacity-50 bg-clip-padding backdrop-blur-xl backdrop-filter transition-all duration-500 hover:scale-110",
+              ]}
+              glassColor={l?.fields.glassColor}
+              url={l?.fields.url ?? "#"}
+            >
+              {l?.fields.title}
+            </CustomLink>
+          );
+        })
+      : ""
+  }
+</ul>

@@ -12,7 +12,13 @@ interface Props {
 }
 
 const {
-  classes = { main: "", icon: "size-12", title: "" },
+  classes = {
+    main: `cLink block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 transition-all duration-100 ease-linear hover:scale-105`,
+    icon: "size-12",
+    title: "",
+    innerMain: "",
+    listItemClass: "",
+  },
   title,
   platform: pform,
   subtitle,
@@ -23,23 +29,27 @@ const gFrom = pform.colorScheme.gFrom;
 const gTo = pform.colorScheme.gTo;
 ---
 
-<CustomLink
-  {url}
-  className={[
-    pform.colorScheme.blur,
-    `cLink block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 transition-all duration-100 ease-linear hover:scale-105`,
-  ]}
->
-  <Icon
-    name={pform.iconName}
-    class:list={[classes.icon]}
-    color={pform.colorScheme.icon}
-  />
-  <span class:list={["gTitle text-2xl font-extrabold", classes.title]}
-    >{title}</span
+<slot>
+  <CustomLink
+    {url}
+    glassColor={pform.colorScheme.blur}
+    className={[classes.main]}
+    listItemClass={classes.listItemClass}
   >
-  <sub class="font-mono uppercase">{subtitle ?? ""}</sub>
-</CustomLink>
+    <Icon
+      slot="icon"
+      name={pform.iconName}
+      class:list={[classes.icon]}
+      color={pform.colorScheme.icon}
+    />
+
+    <span class:list={["gTitle text-2xl font-extrabold", classes.title]}
+      >{title}</span
+    >
+
+    <sub slot="subtitle" class="font-mono uppercase">{subtitle ?? ""}</sub>
+  </CustomLink>
+</slot>
 
 <style define:vars={{ gTo, gFrom }}>
   .gTitle {

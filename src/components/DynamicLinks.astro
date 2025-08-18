@@ -1,0 +1,20 @@
+---
+import type { EntryCollection } from "contentful";
+import type { LinksGroupEntry } from "@/actions";
+import LinkGroup from "./LinkGroup.astro";
+
+import { actions } from "astro:actions";
+import type { CollectionEntry } from "astro:content";
+
+const { data, error } = await Astro.callAction(actions.content, {});
+
+const e = data;
+---
+
+{
+  e && e.total > 0
+    ? e.items.map((itm) => {
+        return <LinkGroup entry={itm} />;
+      })
+    : "Nothing"
+}

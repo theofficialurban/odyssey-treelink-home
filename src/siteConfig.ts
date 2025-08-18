@@ -23,6 +23,8 @@ export interface LiveClasses {
   main?: string;
   icon?: string;
   title?: string;
+  innerMain?: string;
+  listItemClass?: string;
 }
 export interface LiveSocial {
   title: string;
@@ -75,7 +77,7 @@ export const PLATFORMS: Record<Platforms, Platform> = {
       icon: "green",
       gFrom: "#33cc33",
       gTo: "#009900",
-      blur: "bg-clip-padding backdrop-blur-lg backdrop-filter bg-green-400 bg-opacity-20",
+      blur: "rgb(0 153 0 / 0.2)",
     },
     root: "https://rumble.com",
   },
@@ -86,7 +88,7 @@ export const PLATFORMS: Record<Platforms, Platform> = {
       icon: "green",
       gFrom: "#33cc33",
       gTo: "#009900",
-      blur: "bg-clip-padding backdrop-blur-lg backdrop-filter bg-green-400 bg-opacity-20",
+      blur: "rgb(0 153 0 / 0.2)",
     },
     root: "https://kick.com",
   },
@@ -97,7 +99,7 @@ export const PLATFORMS: Record<Platforms, Platform> = {
       icon: "red",
       gFrom: "#ff0000",
       gTo: "#990000",
-      blur: "bg-clip-padding backdrop-blur-lg backdrop-filter bg-red-400 bg-opacity-20",
+      blur: "rgb(255 0 0 / 0.2)",
     },
     root: "https://youtube.com",
   },
@@ -108,7 +110,7 @@ export const PLATFORMS: Record<Platforms, Platform> = {
       icon: "purple",
       gFrom: "#990099",
       gTo: "#660066",
-      blur: "bg-clip-padding backdrop-blur-lg backdrop-filter bg-purple-400 bg-opacity-20",
+      blur: "rgb(204 0 204 / 0.2)",
     },
     root: "https://twitch.tv",
   },
@@ -119,7 +121,7 @@ export const PLATFORMS: Record<Platforms, Platform> = {
       icon: "slate",
       gFrom: "#c2c2d6",
       gTo: "#7575a3",
-      blur: "bg-clip-padding backdrop-blur-lg backdrop-filter bg-gray-400 bg-opacity-20",
+      blur: "rgb(102 102 102 / 0.2)",
     },
     root: "https://x.com",
   },
