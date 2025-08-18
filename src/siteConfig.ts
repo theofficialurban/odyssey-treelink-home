@@ -1,4 +1,3 @@
-import type { ComponentInstance, Props } from "astro";
 import siteConfigJson from "./siteConfig.json";
 import { YouTube, Tweet, LinkPreview } from "astro-embed";
 
