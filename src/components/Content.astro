@@ -22,16 +22,18 @@ import LiveLink from "./LiveLink.astro";
     url={"https://rumble.com/c/MastersMahan/live"}
     glassColor={""}
     className={[`min-h-[75px] flex-row items-center justify-center rounded-md`]}
-    listItemClass={"block rounded-md hover:scale-105 transition-all easing-in-out duration-500 bg-[url('https://1a-1791.com/video/z8/d/V/u/x/dVuxa.caa.a-MastersMahan-swz5c3.jpeg')]  bg-cover bg-center"}
+    listItemClass={"block rounded-md md:hover:scale-105 md:transition-all md:easing-in-out md:duration-500 bg-[url('https://1a-1791.com/video/z8/d/V/u/x/dVuxa.caa.a-MastersMahan-swz5c3.jpeg')]  bg-cover bg-center"}
   >
     <Icon slot="icon" name={"rumble"} class:list={["size-8"]} color={"green"} />
 
-    <span class:list={["gTitle text-2xl font-extrabold"]}>Rumble</span>
+    <span slot="content" class:list={["gTitle text-2xl font-extrabold"]}
+      >Rumble</span
+    >
 
     <sub slot="subtitle" class="font-mono uppercase"></sub>
   </CustomLink>
 </ul>
-<ul class="grid grid-cols-3 gap-5">
+<ul class="grid gap-5 md:grid-cols-3">
   {
     LiveSocials.map((s) => (
       <LiveLink
@@ -48,7 +50,12 @@ import LiveLink from "./LiveLink.astro";
     SITE.customLinks.map((link) => {
       return (
         <CustomLink url={link.url} className={link.className}>
-          <div set:html={link.customHtml ?? link.title} />
+          <Fragment slot={"content"}>
+            <div
+              class="w-full items-center justify-center text-center align-middle"
+              set:html={link.customHtml ?? link.title}
+            />
+          </Fragment>
         </CustomLink>
       );
     })

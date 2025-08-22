@@ -13,7 +13,7 @@ interface Props {
 
 const {
   classes = {
-    main: `cLink block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 transition-all duration-100 ease-linear hover:scale-105`,
+    main: `cLink block min-h-[150px] flex-col items-center justify-center rounded-md border border-gray-600 md:transition-all md:duration-100 md:ease-linear md:hover:scale-105`,
     icon: "size-12",
     title: "",
     innerMain: "",
@@ -43,10 +43,13 @@ const gTo = pform.colorScheme.gTo;
       color={pform.colorScheme.icon}
     />
 
-    <span class:list={["gTitle text-2xl font-extrabold", classes.title]}
-      >{title}</span
-    >
-
+    <Fragment slot={"content"}>
+      <div class="w-full items-center justify-center text-center align-middle">
+        <span class:list={["gTitle text-2xl font-extrabold", classes.title]}
+          >{title}</span
+        >
+      </div>
+    </Fragment>
     <sub slot="subtitle" class="font-mono uppercase">{subtitle ?? ""}</sub>
   </CustomLink>
 </slot>

@@ -1,4 +1,4 @@
-import type { CustomLink } from "@/siteConfig";
+import type { CustomLink, LinkImage } from "@/siteConfig";
 import { getEnv } from "astro/env/runtime";
 import { defineAction } from "astro:actions";
 import {
@@ -15,6 +15,7 @@ import {
   type FieldsType,
 } from "contentful";
 
+export type LinkImageJson = EntryFieldTypes.Object<LinkImage>;
 export type LinksEntry = {
   contentTypeId: "odysseyLinks";
   fields: {
@@ -23,6 +24,7 @@ export type LinksEntry = {
     url: EntryFieldTypes.Text;
     style: EntryFieldTypes.Text;
     glassColor: EntryFieldTypes.Text;
+    linkImage: LinkImageJson;
   };
 };
 export type LinksGroupEntry = {

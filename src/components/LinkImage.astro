@@ -1,0 +1,39 @@
+---
+import type { LinkImage } from "@/siteConfig";
+
+interface Props extends LinkImage {}
+
+const {
+  src = "",
+  bgColor = "rgb(15 23 42 / 0.4)",
+  className = "",
+  alt = "",
+  height = "64px",
+} = Astro.props;
+
+const isSvg: boolean = src.includes("<svg");
+---
+
+{
+  isSvg ? (
+    <div class:list={[className, "icnSquare"]} set:html={src} />
+  ) : (
+    <img
+      class:list={[className, "w-full object-cover md:w-16"]}
+      src={
+        src ??
+        "https://cdn.bio.link/uploads/thumbnails/2024-05-03/76kKlK7AvYfB8R1WzP2dWbVQNj0XGFik.png"
+      }
+      alt={alt}
+    />
+  )
+}
+
+<style define:vars={{ bgColor, height }}>
+  .icnSquare {
+    @apply my-auto h-[var(--height)] w-[var(--height)] items-center justify-center rounded-s-md bg-[var(--bgColor)] align-middle;
+  }
+  img {
+    @apply h-[var(--height)] w-auto;
+  }
+</style>

@@ -18,6 +18,14 @@ interface IconLink {
   url: string;
 }
 
+export type LinkImage = {
+  src?: string;
+  className?: string;
+  alt?: string;
+  bgColor?: string;
+  height?: string;
+};
+
 export interface LiveClasses {
   main?: string;
   icon?: string;
